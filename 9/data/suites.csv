@@ -1,5 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun Aug 08 10:44:26 GMT 2021","Sun Aug 08 10:44:31 GMT 2021","5345","test_conduit","conduit_test","TestCondiutLogin","","","test_cookie_accept",""
-"failed","Sun Aug 08 10:44:34 GMT 2021","Sun Aug 08 10:44:34 GMT 2021","848","test_conduit","conduit_test","TestCondiutLogin","","","test_sign_up",""
-"broken","Sun Aug 08 10:44:37 GMT 2021","Sun Aug 08 10:44:43 GMT 2021","5676","test_conduit","conduit_test","TestCondiutLogin","","","test_login",""
-"passed","Sun Aug 08 10:44:23 GMT 2021","Sun Aug 08 10:44:23 GMT 2021","9","test_conduit","conduit_test","TestCondiutLogin","","","test__home_page_appearances",""
