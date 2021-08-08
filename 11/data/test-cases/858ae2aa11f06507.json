@@ -1,0 +1,76 @@
+{
+  "uid" : "858ae2aa11f06507",
+  "name" : "test_login",
+  "fullName" : "test_conduit.test_locally_test.TestCondiutLocally#test_login",
+  "historyId" : "cfc98b43951f2cee6812eed2d63fdf83",
+  "time" : {
+    "start" : 1628419572778,
+    "stop" : 1628419573762,
+    "duration" : 984
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a9c740e45c359eb",
+      "name" : "log",
+      "source" : "a9c740e45c359eb.txt",
+      "type" : "text/plain",
+      "size" : 386
+    }, {
+      "uid" : "2160f8fb1fc17947",
+      "name" : "stderr",
+      "source" : "2160f8fb1fc17947.txt",
+      "type" : "text/plain",
+      "size" : 212
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test_conduit"
+  }, {
+    "name" : "suite",
+    "value" : "test_locally_test"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCondiutLocally"
+  }, {
+    "name" : "host",
+    "value" : "R1-Roni-MBP"
+  }, {
+    "name" : "thread",
+    "value" : "35901-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_conduit.test_locally_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "858ae2aa11f06507.json",
+  "parameterValues" : [ ]
+}
