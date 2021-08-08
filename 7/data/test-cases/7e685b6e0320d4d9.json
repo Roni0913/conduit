@@ -1,0 +1,112 @@
+{
+  "uid" : "7e685b6e0320d4d9",
+  "name" : "test_login",
+  "fullName" : "test_conduit.conduit_test.TestCondiutLogin#test_login",
+  "historyId" : "7924ada2e2ca89fc6a9a2cd6ff54e0d6",
+  "time" : {
+    "start" : 1628417703524,
+    "stop" : 1628417704539,
+    "duration" : 1015
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "24090f78c1de6ca6",
+      "name" : "log",
+      "source" : "24090f78c1de6ca6.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "2f63c598f33d95c",
+      "name" : "stderr",
+      "source" : "2f63c598f33d95c.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test_conduit"
+  }, {
+    "name" : "suite",
+    "value" : "conduit_test"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCondiutLogin"
+  }, {
+    "name" : "host",
+    "value" : "fv-az83-740"
+  }, {
+    "name" : "thread",
+    "value" : "3717-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_conduit.conduit_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "44fbab88648dabd1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628417448804,
+        "stop" : 1628417449790,
+        "duration" : 986
+      }
+    }, {
+      "uid" : "b3e801176370ecea",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416848533,
+        "stop" : 1628416849998,
+        "duration" : 1465
+      }
+    }, {
+      "uid" : "ea68e8835f418a3b",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.TimeoutException: Message:",
+      "time" : {
+        "start" : 1628416713130,
+        "stop" : 1628416718974,
+        "duration" : 5844
+      }
+    }, {
+      "uid" : "a82aa35adf162967",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <button class=\"btn btn-lg btn-primary pull-xs-right\">...</button> is not clickable at point (511, 331). Other element would receive the click: <div class=\"swal-title\" style=\"\">...</div>\n  (Session info: headless chrome=92.0.4515.131)",
+      "time" : {
+        "start" : 1628416452144,
+        "stop" : 1628416453885,
+        "duration" : 1741
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7e685b6e0320d4d9.json",
+  "parameterValues" : [ ]
+}
