@@ -8,3 +8,5 @@ src/deno_dir
 .github/.DS_store
 test_conduit/test_locally_test.py
 test_conduit/__pycache__
+allure-results/*.txt
+allure-results/*.json

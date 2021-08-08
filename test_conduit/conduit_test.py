@@ -197,3 +197,21 @@ class TestCondiutApp(object):
             not_found = True
 
         assert not_found
+
+    # TEST11 (LOG OUT)
+    def test_logout(self):
+        self.driver.maximize_window()
+        self.login()
+        time.sleep(2)
+        self.driver.find_element_by_partial_link_text('Log out').click()
+
+        try:
+            WebDriverWait(
+                self.driver, 5).until(
+                EC.visibility_of_element_located((By.PARTIAL_LINK_TEXT, 'Log out'))
+            )
+            not_found = False
+        except:
+            not_found = True
+
+        assert not_found
