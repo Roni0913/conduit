@@ -1,0 +1,86 @@
+{
+  "uid" : "bd1be21af41dbd35",
+  "name" : "test_cookie_accept",
+  "fullName" : "test_conduit.conduit_test.TestCondiutApp#test_cookie_accept",
+  "historyId" : "921d912dc65a783d73649c06504f55f1",
+  "time" : {
+    "start" : 1628427572926,
+    "stop" : 1628427573122,
+    "duration" : 196
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert False",
+  "statusTrace" : "self = <conduit_test.TestCondiutApp object at 0x7fbe70d9ae80>\n\n    def test_cookie_accept(self):\n        self.driver.maximize_window()\n        cookie_accept = WebDriverWait(\n            self.driver, 5).until(\n            EC.visibility_of_element_located((By.CLASS_NAME, 'cookie__bar__buttons__button--accept'))\n        )\n        cookie_accept.click()\n        try:\n            WebDriverWait(\n                self.driver, 5).until(\n                EC.visibility_of_element_located((By.ID, 'cookie-policy-panel'))\n            )\n            not_found = False\n        except:\n            not_found = True\n    \n>       assert not_found\nE       assert False\n\ntest_conduit/conduit_test.py:76: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert False",
+    "statusTrace" : "self = <conduit_test.TestCondiutApp object at 0x7fbe70d9ae80>\n\n    def test_cookie_accept(self):\n        self.driver.maximize_window()\n        cookie_accept = WebDriverWait(\n            self.driver, 5).until(\n            EC.visibility_of_element_located((By.CLASS_NAME, 'cookie__bar__buttons__button--accept'))\n        )\n        cookie_accept.click()\n        try:\n            WebDriverWait(\n                self.driver, 5).until(\n                EC.visibility_of_element_located((By.ID, 'cookie-policy-panel'))\n            )\n            not_found = False\n        except:\n            not_found = True\n    \n>       assert not_found\nE       assert False\n\ntest_conduit/conduit_test.py:76: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "83e1f54a2cc75d4d",
+      "name" : "log",
+      "source" : "83e1f54a2cc75d4d.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "cf95f621b61c6233",
+      "name" : "stderr",
+      "source" : "cf95f621b61c6233.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test_conduit"
+  }, {
+    "name" : "suite",
+    "value" : "conduit_test"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCondiutApp"
+  }, {
+    "name" : "host",
+    "value" : "fv-az42-510"
+  }, {
+    "name" : "thread",
+    "value" : "3783-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_conduit.conduit_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "bd1be21af41dbd35.json",
+  "parameterValues" : [ ]
+}
