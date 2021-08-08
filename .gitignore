@@ -7,3 +7,4 @@ src/deno_dir
 .DS_Store
 .github/.DS_store
 test_conduit/test_locally_test.py
+test_conduit/__pycache__

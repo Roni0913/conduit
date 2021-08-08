@@ -1,4 +1,4 @@
-name: Conduit REMEK
+name: Conduit REMEK Roni
 on:
   push:
     branches: [ master ]
