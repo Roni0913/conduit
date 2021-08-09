@@ -189,6 +189,7 @@ class TestCondiutApp(object):
         random_nr = int(time.time())
         random_title = 'RA1mod' + str(random_nr)
         self.new_article(random_title, 'RA1', text, 'exammod')
+        time.sleep(2)
         self.driver.find_element_by_xpath('//button[@class="btn btn-outline-danger btn-sm"]').click()
         time.sleep(3)
         try:
@@ -247,3 +248,25 @@ class TestCondiutApp(object):
                 comment_added = self.driver.find_element_by_css_selector('.card-text')
                 assert comment_added.text == formdata[4]
                 time.sleep(2)
+
+    # TEST10 (Save data from web to file)
+    def test_save_data_from_web_to_file(self):
+        self.driver.maximize_window()
+        self.login()
+        time.sleep(2)
+        posts = self.driver.find_elements_by_class_name('article-preview')
+        with open('./test_conduit/web_data_save.txt', 'w') as web_save:
+            for post in posts:
+                post_title = post.find_element_by_tag_name('h1').text
+                web_save.write(post_title)
+                web_save.write('\n')
+
+        with open('./test_conduit/web_data_save.txt', 'r') as web_saved:
+            for post_title in web_saved:
+                title = self.driver.find_elements_by_class_name('article-preview')[0].find_element_by_tag_name(
+                    'h1').text
+                assert post_title.strip() == title
+                break
+
+
+
