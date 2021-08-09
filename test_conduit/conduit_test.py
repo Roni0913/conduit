@@ -1,3 +1,4 @@
+import csv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -9,7 +10,7 @@ import time
 text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar ullamcorper pharetra. Donec faucibus posuere turpis, id tincidunt lacus euismod et. Morbi in diam scelerisque, imperdiet nulla ut, facilisis lacus. Donec laoreet nunc ac sapien accumsan, ut facilisis erat finibus. Etiam suscipit ac ex quis ornare. Nulla eu massa sagittis, porttitor eros eget, varius sapien. Ut cursus tortor tempus dui ultrices cursus. Fusce at dui scelerisque, dignissim turpis et, blandit eros. ' \
        'Integer ullamcorper tempus ligula, ac lobortis nulla dignissim at. Aliquam ullamcorper ligula vel augue tempus, sit amet consequat nulla hendrerit. Aliquam risus quam, luctus sit amet risus eu, elementum blandit sem. Praesent sit amet nunc nec mi interdum pretium id feugiat tortor. Pellentesque pharetra, felis sit amet iaculis posuere, orci diam molestie arcu, ut consequat ligula massa eget lectus. Vestibulum rhoncus aliquam tristique. Quisque finibus purus eget commodo vehicula. Pellentesque sit amet nulla scelerisque, vestibulum augue in, condimentum neque. Vivamus eget iaculis tortor. Nam nec velit sed dui gravida interdum. Integer vehicula suscipit sagittis.'
 text2 = '2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar ullamcorper pharetra. Donec faucibus posuere turpis, id tincidunt lacus euismod et. Morbi in diam scelerisque, imperdiet nulla ut, facilisis lacus. Donec laoreet nunc ac sapien accumsan, ut facilisis erat finibus. Etiam suscipit ac ex quis ornare. Nulla eu massa sagittis, porttitor eros eget, varius sapien. Ut cursus tortor tempus dui ultrices cursus. Fusce at dui scelerisque, dignissim turpis et, blandit eros. ' \
-       'Integer ullamcorper tempus ligula, ac lobortis nulla dignissim at. Aliquam ullamcorper ligula vel augue tempus, sit amet consequat nulla hendrerit. Aliquam risus quam, luctus sit amet risus eu, elementum blandit sem. Praesent sit amet nunc nec mi interdum pretium id feugiat tortor. Pellentesque pharetra, felis sit amet iaculis posuere, orci diam molestie arcu, ut consequat ligula massa eget lectus. Vestibulum rhoncus aliquam tristique. Quisque finibus purus eget commodo vehicula. Pellentesque sit amet nulla scelerisque, vestibulum augue in, condimentum neque. Vivamus eget iaculis tortor. Nam nec velit sed dui gravida interdum. Integer vehicula suscipit sagittis.'
+        'Integer ullamcorper tempus ligula, ac lobortis nulla dignissim at. Aliquam ullamcorper ligula vel augue tempus, sit amet consequat nulla hendrerit. Aliquam risus quam, luctus sit amet risus eu, elementum blandit sem. Praesent sit amet nunc nec mi interdum pretium id feugiat tortor. Pellentesque pharetra, felis sit amet iaculis posuere, orci diam molestie arcu, ut consequat ligula massa eget lectus. Vestibulum rhoncus aliquam tristique. Quisque finibus purus eget commodo vehicula. Pellentesque sit amet nulla scelerisque, vestibulum augue in, condimentum neque. Vivamus eget iaculis tortor. Nam nec velit sed dui gravida interdum. Integer vehicula suscipit sagittis.'
 
 
 class TestCondiutApp(object):
@@ -72,7 +73,7 @@ class TestCondiutApp(object):
             not_found = False
         except:
             not_found = True
-
+        time.sleep(2)
         assert not_found
 
     # TEST1 (REGISTRATION)
@@ -139,6 +140,7 @@ class TestCondiutApp(object):
         assert element.text == 'RA1'
         article_content = self.driver.find_element_by_class_name('article-content')
         assert article_content.find_element_by_xpath('//p').text == text
+
     # TEST5 (MODIFY ARTICLE)
     def test_modify_article(self):
         self.driver.maximize_window()
@@ -164,7 +166,8 @@ class TestCondiutApp(object):
         article_text = self.driver.find_element_by_xpath('//textarea[@placeholder="Write your article (in markdown)"]')
         assert article_text.get_property('value') == text
         article_text.clear()
-        self.driver.find_element_by_xpath('//textarea[@placeholder="Write your article (in markdown)"]').send_keys(text2)
+        self.driver.find_element_by_xpath('//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
+            text2)
         # Article tags new
         self.driver.find_element_by_xpath('//input[@placeholder="Enter tags"]').clear()
         self.driver.find_element_by_xpath('//input[@placeholder="Enter tags"]').send_keys('exammodnew')
@@ -178,6 +181,7 @@ class TestCondiutApp(object):
         assert element.text == 'RA1modnew'
         article_content = self.driver.find_element_by_class_name('article-content')
         assert article_content.find_element_by_xpath('//p').text == text2
+
     # TEST6 (DELETE ARTICLE)
     def test_delete_article(self):
         self.driver.maximize_window()
@@ -215,3 +219,31 @@ class TestCondiutApp(object):
             not_found = True
 
         assert not_found
+
+    # TEST7 (Repeated and sequential data entry from CSV file)
+    def test_rsd_entry_from_file(self):
+        self.driver.maximize_window()
+        self.login()
+        time.sleep(2)
+        with open('./test_conduit/articles.csv', 'r') as kulcs:
+            csv_reader = csv.reader(kulcs, delimiter=';')
+            next(csv_reader)
+            for formdata in csv_reader:
+                # print(formdata)
+                self.new_article(formdata[0], formdata[1], formdata[2], formdata[3])
+                element = WebDriverWait(
+                    self.driver, 5).until(
+                    EC.visibility_of_element_located((By.TAG_NAME, 'h1'))
+                )
+                assert element.text == formdata[0]
+                article_content = self.driver.find_element_by_class_name('article-content')
+                assert article_content.find_element_by_xpath('//p').text == formdata[2]
+                comment = self.driver.find_element_by_xpath(
+                    '//textarea[@placeholder="Write a comment..."]')
+                comment.clear()
+                comment.send_keys(formdata[4])
+                self.driver.find_element_by_xpath('//button[@class="btn btn-sm btn-primary"]').click()
+                time.sleep(2)
+                comment_added = self.driver.find_element_by_css_selector('.card-text')
+                assert comment_added.text == formdata[4]
+                time.sleep(2)
