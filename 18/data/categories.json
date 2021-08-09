@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <button class=\"btn btn-outline-danger btn-sm\">...</button> is not clickable at point (358, 184). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=92.0.4515.131)",
+      "children" : [ {
+        "name" : "test_delete_article",
+        "uid" : "7e7ec2f99dfcef7d",
+        "parentUid" : "98ec42bd287985af405147902d24d257",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628543987539,
+          "stop" : 1628543997585,
+          "duration" : 10046
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "98ec42bd287985af405147902d24d257"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
