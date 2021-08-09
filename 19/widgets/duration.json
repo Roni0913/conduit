@@ -1,0 +1,101 @@
+[ {
+  "uid" : "aefcc1ee2a46df1f",
+  "name" : "test_add_new_article",
+  "time" : {
+    "start" : 1628544883578,
+    "stop" : 1628544892528,
+    "duration" : 8950
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "753d2bfe8ece604d",
+  "name" : "test__home_page_appearances",
+  "time" : {
+    "start" : 1628544860366,
+    "stop" : 1628544860371,
+    "duration" : 5
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2d43cd8cd4642ff5",
+  "name" : "test_logout",
+  "time" : {
+    "start" : 1628544936455,
+    "stop" : 1628544944168,
+    "duration" : 7713
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7d66b55443531564",
+  "name" : "test_modify_article",
+  "time" : {
+    "start" : 1628544895355,
+    "stop" : 1628544911707,
+    "duration" : 16352
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9876361fea603d73",
+  "name" : "test_rsd_entry_from_file",
+  "time" : {
+    "start" : 1628544946990,
+    "stop" : 1628545010339,
+    "duration" : 63349
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "eb529ec25b5a4dd2",
+  "name" : "test_cookie_accept",
+  "time" : {
+    "start" : 1628544863228,
+    "stop" : 1628544870576,
+    "duration" : 7348
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f564363ddfddb99d",
+  "name" : "test_delete_article",
+  "time" : {
+    "start" : 1628544914538,
+    "stop" : 1628544933655,
+    "duration" : 19117
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6438c1dd7c4a11e",
+  "name" : "test_login",
+  "time" : {
+    "start" : 1628544879695,
+    "stop" : 1628544880785,
+    "duration" : 1090
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b211b6edef223e47",
+  "name" : "test_save_data_from_web_to_file",
+  "time" : {
+    "start" : 1628545013163,
+    "stop" : 1628545016125,
+    "duration" : 2962
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cfe995fa059ae84d",
+  "name" : "test_sign_up",
+  "time" : {
+    "start" : 1628544873574,
+    "stop" : 1628544876884,
+    "duration" : 3310
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
