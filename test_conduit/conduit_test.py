@@ -268,5 +268,38 @@ class TestCondiutApp(object):
                 assert post_title.strip() == title
                 break
 
+    # TEST9 (PAGINATION)
+    def test_pagination(self):
+        self.driver.maximize_window()
+        self.login()
+        time.sleep(2)
+        posts = self.driver.find_elements_by_class_name('article-preview')
+        first_post = posts[0].find_element_by_tag_name('h1').text
+        pagination = self.driver.find_element_by_class_name('pagination')
+        pages = pagination.find_elements_by_class_name('page-link')
+        for index, page in enumerate(pages):
+            if len(pages) <= index + 1:
+                break
+            else:
+                pages[index + 1].click()
 
+            time.sleep(2)
+            posts_2 = self.driver.find_elements_by_class_name('article-preview')
+            first_post_2 = posts_2[0].find_element_by_tag_name('h1').text
+            assert first_post_2 != first_post
+            first_post = first_post_2
 
+    # TEST8 (DATA LISTING)
+    def test_data_listing(self):
+        self.driver.maximize_window()
+        self.login()
+        time.sleep(2)
+        sidebar = self.driver.find_element_by_class_name('sidebar')
+        popular_text = sidebar.find_elements_by_class_name('tag-pill')
+        popular_text[0].click()
+        time.sleep(2)
+        page_elements = self.driver.find_elements_by_class_name('article-preview')
+        for page in page_elements:
+            article_tags = page.find_elements_by_css_selector('a.tag-list')
+            for tag in article_tags:
+                assert popular_text[0].text == tag.text
