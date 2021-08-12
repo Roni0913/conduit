@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 import time
-
+# texts for the modification and creation
 text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar ullamcorper pharetra. Donec faucibus posuere turpis, id tincidunt lacus euismod et. Morbi in diam scelerisque, imperdiet nulla ut, facilisis lacus. Donec laoreet nunc ac sapien accumsan, ut facilisis erat finibus. Etiam suscipit ac ex quis ornare. Nulla eu massa sagittis, porttitor eros eget, varius sapien. Ut cursus tortor tempus dui ultrices cursus. Fusce at dui scelerisque, dignissim turpis et, blandit eros. ' \
        'Integer ullamcorper tempus ligula, ac lobortis nulla dignissim at. Aliquam ullamcorper ligula vel augue tempus, sit amet consequat nulla hendrerit. Aliquam risus quam, luctus sit amet risus eu, elementum blandit sem. Praesent sit amet nunc nec mi interdum pretium id feugiat tortor. Pellentesque pharetra, felis sit amet iaculis posuere, orci diam molestie arcu, ut consequat ligula massa eget lectus. Vestibulum rhoncus aliquam tristique. Quisque finibus purus eget commodo vehicula. Pellentesque sit amet nulla scelerisque, vestibulum augue in, condimentum neque. Vivamus eget iaculis tortor. Nam nec velit sed dui gravida interdum. Integer vehicula suscipit sagittis.'
 text2 = '2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar ullamcorper pharetra. Donec faucibus posuere turpis, id tincidunt lacus euismod et. Morbi in diam scelerisque, imperdiet nulla ut, facilisis lacus. Donec laoreet nunc ac sapien accumsan, ut facilisis erat finibus. Etiam suscipit ac ex quis ornare. Nulla eu massa sagittis, porttitor eros eget, varius sapien. Ut cursus tortor tempus dui ultrices cursus. Fusce at dui scelerisque, dignissim turpis et, blandit eros. ' \
@@ -14,6 +14,7 @@ text2 = '2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvin
 
 
 class TestCondiutApp(object):
+    # Chrome setup for testing
     def setup(self):
         browser_options = Options()
         browser_options.headless = True
@@ -21,9 +22,11 @@ class TestCondiutApp(object):
         self.driver.get('http://localhost:1667')
         time.sleep(1)
 
+    # Chrome quit
     def teardown(self):
         self.driver.quit()
 
+    # Login function
     def login(self):
         self.driver.find_element_by_partial_link_text('Sign in').click()
         self.driver.find_element_by_xpath('//input[@placeholder="Email"]').clear()
@@ -32,6 +35,7 @@ class TestCondiutApp(object):
         self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys('Rr0123456')
         self.driver.find_element_by_xpath('//button[@class="btn btn-lg btn-primary pull-xs-right"]').click()
 
+    # New article function
     def new_article(self, title, short_description, text_data, tags):
         time.sleep(2)
         self.driver.find_element_by_partial_link_text('New Article').click()
